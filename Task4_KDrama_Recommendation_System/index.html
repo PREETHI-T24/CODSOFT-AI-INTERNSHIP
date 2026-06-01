@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Movie Recommendation System</title>
+
+
+<style>
+    body {
+        background-color: #f5f7ff;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    .container {
+        margin-top: 50px;
+    }
+
+    h2 {
+        color: #0b4bec;
+        text-decoration: underline;
+    }
+
+    input {
+        width: 250px;
+        padding: 10px;
+        border: 2px solid #4a6cf7;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+
+    button {
+        background-color: #4a6cf7;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 15px;
+    }
+
+    button:hover {
+        background-color: #2848d8;
+    }
+
+    #result {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #d41414;
+        background-color: white;
+        display: none;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px lightgray;
+        width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+<h2>Movie Recommendation System</h2>
+
+<input type="text" id="genre" placeholder="Enter Genre (Thriller, Comedy, Romance)">
+<br>
+
+<button onclick="recommendDrama()">Recommend</button>
+
+<p id="result"></p>
+
+
+</div>
+
+<script>
+function recommendDrama() {
+
+    let genre = document.getElementById("genre").value.toLowerCase();
+    let result = "";
+
+    if (genre === "thriller") {
+        result =
+        "Recommended K-Dramas:<br>" +
+        "1. Mouse<br>" +
+        "2. Strangers From Hell<br>" +
+        "3. Voice<br>" +
+        "4. Flower of Evil";
+
+    } 
+    else if (genre === "comedy") {
+        result =
+        "Recommended K-Dramas:<br>" +
+        "1. Welcome to Waikiki<br>" +
+        "2. True Beauty<br>" +
+        "3. Mr. Queen<br>" +
+        "4. Good Manager";
+    } 
+    else if (genre === "romance") {
+        result =
+        "Recommended K-Dramas:<br>" +
+        "1. Goblin<br>" +
+        "2. Business Proposal<br>" +
+        "3. Crash Landing on You<br>" +
+        "4. Descendants of the Sun";
+    } 
+    else {
+        result = "No recommendations available for this genre.";
+    }
+
+    document.getElementById("result").style.display = "block";
+    document.getElementById("result").innerHTML = result;
+}
+</script>
+
+</body>
+</html>
